@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Phishing Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <nav><a href="/">Check URL</a><a href="/dashboard">Dashboard</a></nav>
+  <hr>
+  <h2>Model Dashboard</h2>
+  <p>Deployed model: <b>Logistic Regression</b> (highest accuracy)</p>
+
+  <h3>Results for methods</h3>
+  <table>
+    <tr>{% for h in header %}<th>{{ h }}</th>{% endfor %}</tr>
+    {% for r in rows %}<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}
+  </table>
+
+  <h3>Accuracy comparison</h3><img src="{{ url_for('static', filename='accuracy.png') }}">
+  <h3>Precision comparison</h3><img src="{{ url_for('static', filename='precision.png') }}">
+  <h3>Recall comparison</h3><img src="{{ url_for('static', filename='recall.png') }}">
+  <h3>F1-score comparison</h3><img src="{{ url_for('static', filename='f1.png') }}">
+  <h3>All metrics together</h3><img src="{{ url_for('static', filename='all_metrics.png') }}">
+  <h3>ROC curves</h3><img src="{{ url_for('static', filename='roc.png') }}">
+  <h3>Confusion matrix (Logistic Regression)</h3><img src="{{ url_for('static', filename='confusion.png') }}">
+  <h3>Confusion matrices (all models)</h3><img src="{{ url_for('static', filename='confusion_all.png') }}">
+  <h3>Logistic Regression feature importance</h3><img src="{{ url_for('static', filename='lr_importance.png') }}">
+</body>
+
+</html>
