@@ -1,0 +1,9 @@
+<!doctype html><html><head><title>Phishing Detector</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<nav><a href="/">Check URL</a><a href="/dashboard">Dashboard</a></nav><hr>
+<h2>Result</h2>
+<p><b>URL:</b> {{ url }}</p>
+{% if phishing %}<h3 class="bad">Phishing</h3>{% else %}<h3 class="good">Legitimate</h3>{% endif %}
+<p>Confidence: {{ prob }}%</p>
+<a href="/">Check another</a>
+</body></html>
