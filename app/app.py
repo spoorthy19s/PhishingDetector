@@ -4,11 +4,11 @@ from pathlib import Path
 import joblib
 from flask import Flask, render_template, request
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = Flask(__name__)
-model = joblib.load(BASE_DIR / "model.pkl")
-features = joblib.load(BASE_DIR / "features.pkl")
+model = joblib.load(BASE_DIR / "models" / "model.pkl")
+features = joblib.load(BASE_DIR / "models" / "features.pkl") 
 
 
 def extract_features(url):
